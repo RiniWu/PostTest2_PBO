@@ -123,6 +123,86 @@ Penerapan Model View Controller (MVC)
 - Kode diatas berfungsi untuk mengembalikan jumlah data festival yang ada di dalam list.
 
 
+### 3. Package & Class mainFestival
+
+<img width="245" height="53" alt="image" src="https://github.com/user-attachments/assets/4c38e4c5-8204-4462-8891-562034d1a7e6" />
+
+**a. Deklarasi package & import**
+
+<img width="489" height="197" alt="image" src="https://github.com/user-attachments/assets/3b310a8e-3415-47f2-8462-a052cfeb320a" />
+
+- Class mainFestival ditempatkan di package Main yang dimana berfungsi sebagai tampilan menu interaktif bagi pengguna. Di sini, user dapat memilih menu melalui input angka yang divalidasi menggunakan try-catch agar input tidak salah. Program ini menyediakan menu untuk menambah, melihat, mengubah, dan menghapus data festival, serta menampilkan pesan ketika pilihan tidak valid.
+- Untuk import sendiri class ini menggunakan modelFestival dari package Model dan serviceFestival dari package Service. Selain itu, diimpor juga Scanner untuk membaca input dari keyboard, serta InputMismatchException untuk menangani kesalahan input ketika pengguna memasukkan data yang tidak sesuai tipe.
+
+**b. Deklarasi Class**
+
+<img width="686" height="157" alt="image" src="https://github.com/user-attachments/assets/1ead267a-8f77-4b55-a438-a7a05375882d" />
+
+- Class mainFestival berisi method main sebagai titik awal program. Di dalamnya dibuat objek Scanner untuk membaca input dari user dan objek serviceFestival untuk mengelola data festival. Variabel pilihan disiapkan untuk menampung pilihan menu yang dimasukkan oleh pengguna.
+
+**c. Menu Utama dengan perulangan do-while**
+
+<img width="928" height="294" alt="image" src="https://github.com/user-attachments/assets/3ec595d7-87b6-4be8-9252-e946d75720ee" />
+
+- Program ini akan menampilkan menu utama dengan pilihan 1 sampai 5. Perulangan do-while dipakai agar menu terus ditampilkan sampai pengguna memilih keluar pada opsi nomor 5.
+- Input pilihan dibaca dengan Scanner, lalu input.nextLine() dipanggil untuk menghapus karakter enter setelah input angka. Bagian ini dibungkus try-catch sebagai validasi input supaya jika pengguna salah memasukkan data, program tidak langsung error.
+
+**d. CASE 1 (Tambah Festival)**
+
+<img width="908" height="270" alt="image" src="https://github.com/user-attachments/assets/b7b7c146-c857-462e-86c6-7cf9f7ec0a8d" />
+
+- Pada program ini setiap menu diproses menggunakan switch-case. Jika pengguna memasukkan angka yang tidak sesuai menu, maka akan pesan "Pilihan tidak valid!"
+-  ika memilih menu 1, program akan meminta input nama, asal, dan tanggal festival. Data ini dipakai untuk membuat objek baru dalam modelFestival, lalu objek tersebut ditambahkan ke dalam daftar menggunakan service.tambahFestival().
+
+**e. CASE 2 (Lihat Festival)**
+
+<img width="489" height="92" alt="image" src="https://github.com/user-attachments/assets/cb4d7ef8-92ae-4c45-81c9-d885fb1b72b5" />
+
+- Jika memilih menu 2, program langsung memanggil metode tampilkanFestival() dari serviceFestival untuk menampilkan daftar festival dalam bentuk tabel.
+
+**f. CASE 3 (Ubah Festival)**
+
+<img width="1338" height="403" alt="image" src="https://github.com/user-attachments/assets/2556902b-dce7-4972-8126-79402a7bf4c3" />
+
+- Jika memilih menu 3, program akan menampilkan daftar festival lalu meminta nomor festival yang akan diubah. Karena indeks di ArrayList mulai dari nol, maka nomor input dikurangi 1. Selanjutnya, pengguna diminta memasukkan data baru, lalu program memanggil ubahFestival() untuk mengganti data lama dengan data baru.
+
+**g. CASE 4 (Hapus Festival)**
+
+<img width="876" height="242" alt="image" src="https://github.com/user-attachments/assets/609ae326-4777-41c9-bf68-ca52054d58fd" />
+
+- Jika memilih menu 4, program akan menampilkan daftar festival dan meminta nomor festival yang ingin dihapus. Sama seperti update, nomor dikurangi 1 agar sesuai dengan indeks list. Data dihapus dengan memanggil hapusFestival().
+
+**h. CASE 5 (Keluar Program)**
+
+<img width="891" height="165" alt="image" src="https://github.com/user-attachments/assets/02504f28-54b1-4574-8486-8359310cd5c7" />
+
+- Jika memilih menu 5, program akan menampilkan ucapan terima kasih lalu perulangan berhenti.
+- Jika memilih menu selain dari angka 1-5, maka program akan menampilkan pesan bahwa "Pilihan tidak valid!" dan akan langsung melakukan perulangan ke menu.
+
+**i. Exception Handling**
+
+<img width="631" height="108" alt="image" src="https://github.com/user-attachments/assets/2031d2b4-5c1e-4b5d-a1dd-a6653b7517e0" />
+
+- Bagian ini menangani kesalahan input. Jika pengguna salah memasukkan tipe data (misalnya huruf saat diminta angka), maka program akan menampilkan pesan “Input harus berupa angka!” dan membersihkan input agar program bisa lanjut tanpa error.
+
+**j. Perulangan do-while**
+
+<img width="349" height="112" alt="image" src="https://github.com/user-attachments/assets/2bfcc161-37de-4de9-b933-01c4d5c35302" />
+
+- Perulangan akan terus berjalan selama pilihan bukan 5. Begitu pengguna memilih keluar, program berhenti dan Scanner akan ditutup.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
