@@ -1,4 +1,4 @@
-# PostTest2_PBO
+# PostTest2_PBO (Manajemen_Daftar_Festival_Budaya)
 
 Nama : Rini Wulandari
 
@@ -203,21 +203,37 @@ Penerapan Model View Controller (MVC)
 
 <img width="418" height="229" alt="image" src="https://github.com/user-attachments/assets/50d12389-f3bf-440a-aa35-d95ecfce7b9d" />
 
-- 
+- Jika memilih angka 1, maka program akan meminta pengguna untuk memasukkan nama, asal dan tanggal pelaksanaan festival. Data tersebut disimpan dalam sebuah objek dalam modelFestival yang kemudian ditambahkan ke daftar melalui service.tambahFestival(). Pesan konfirmasi akan ditampilkan setelah festival berhasil ditambahkan.
 
+**2. Lihat Daftar Festival**
 
+<img width="773" height="346" alt="image" src="https://github.com/user-attachments/assets/65e676e0-f3f6-47a8-a72b-e54d30a3dbf9" />
 
+- Jika memilih angka 2, maka program akan langsung menampilkan daftar list festival yang sebelumnya sudah ada maupun yang baru saja ditambahkan. Jika daftar masih kosong, akan ditampilkan pesan bahwa belum ada data festival. Jika sudah ada, seluruh festival ditampilkan dalam bentuk daftar tabel dengan nomor urut.
 
+**3. Ubah Festival**
 
+<img width="771" height="441" alt="image" src="https://github.com/user-attachments/assets/b357c6af-4b62-4602-823f-053b9fb94e3c" />
 
+- Jika memilih angka 3, maka program terlebih dahulu menampilkan daftar festival. Jika daftar kosong, proses ubah tidak dilakukan. Jika ada data, pengguna akan diminta memilih nomor festival yang ingin diubah. Setelah nomor dimasukkan, pengguna diminta memberikan data baru berupa nama, asal, dan tanggal pelaksanaan. Objek festival baru dibuat, lalu menggantikan data lama melalui service.ubahFestival(). Jika nomor yang dimasukkan valid, muncul pesan bahwa festival berhasil diubah, sedangkan nomor yang salah akan menghasilkan pesan error.
 
+**4. Hapus Festival**
 
+<img width="769" height="212" alt="image" src="https://github.com/user-attachments/assets/04185e5f-076d-4e13-a3b1-a0c2937653f5" />
 
+- Jika memilih angka 4, program akan menampilkan daftar festival terlebih dahulu. Jika tidak ada data, proses berhenti. Jika ada, pengguna diminta memasukkan nomor festival yang akan dihapus. Nomor yang dipilih digunakan untuk menghapus data melalui service.hapusFestival(). Jika nomor valid, program menampilkan pesan keberhasilan penghapusan dengan menyebutkan nama festival yang dihapus, sedangkan nomor yang tidak sesuai menghasilkan pesan “Nomor tidak valid!”.
+- Setelah proses penghapusan data maka tabel akan otomatis menyesuaikan urutan dari nomor festival, sebagai contoh output dibawah ini yang sebelumnya saya telah melakukan penghapusan data nomor 3 dengan nama festival "Festival Karapan Sapi".
 
+<img width="769" height="151" alt="image" src="https://github.com/user-attachments/assets/78a0b524-cff7-4ffc-903c-489055b39fa3" />
 
+**5. Keluar**
 
+<img width="668" height="221" alt="image" src="https://github.com/user-attachments/assets/45aca76d-6a35-4915-9a96-793b9b2ce507" />
 
+- Jika memilih angka 5, maka program akan menampilkan pesan “Terima kasih! Program telah selesai ^-^” lalu keluar dari perulangan do–while.
+- Pilihan lain selain 1–5: Jika pengguna memasukkan angka di luar pilihan yang tersedia, program menampilkan pesan “Pilihan tidak valid!”. Seperti output dibawah ini.
 
+***Output jika memilih angka selain 1-5***
 
-
+<img width="369" height="169" alt="image" src="https://github.com/user-attachments/assets/dd550a21-61f1-4454-8c5d-9bf8661c9808" />
 
