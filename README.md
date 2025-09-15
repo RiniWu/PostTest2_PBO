@@ -7,25 +7,32 @@ NIM : 2409116048
 Kelas : Sistem Informasi B 2024
 
 ## Penjelasan Singkat terkait Program
-Pada program ini berguna dalam menampung informasi data dari Festival Budaya mulai dari nama festival, asal festival dan tanggal pelaksanaan festival. Dalam program ini menyediakan opsi untuk menambahkan festival baru, menampilkan daftar festival dalam format tabel rapi, mengubah data festival berdasarkan nomor urut, serta menghapus festival sekaligus memperbarui daftar agar tetap berurutan. Proses menu dijalankan menggunakan perulangan do-while dan struktur switch-case, dilengkapi validasi agar input nomor yang dipilih sesuai dengan data yang ada.
+Program ini berguna dalam menampung informasi data dari Festival Budaya mulai dari nama festival, asal festival dan tanggal pelaksanaan festival. Dalam program ini menyediakan opsi untuk menambahkan festival baru, menampilkan daftar festival dalam format tabel, mengubah data festival berdasarkan nomor urut, serta menghapus festival sekaligus memperbarui daftar agar tetap berurutan. Proses menu dijalankan menggunakan perulangan do-while dan struktur switch-case, dilengkapi validasi agar input nomor yang dipilih sesuai dengan data yang ada.
 
 ## Struktur Program
 Program ini dibagi menjadi 3 package utama:
-1. **package Model**
 
-   Di package ini terdapat class modelFestival yang menyimpan data dasar sebuah festival, seperti nama, asal daerah, dan tanggal pelaksanaannya. Package ini berfungsi sebagai tempat mendefinisikan struktur data yang akan dipakai program.
-   
-2. **package Service**
+Penerapan Model View Controller (MVC)
 
-   Package ini berisi class serviceFestival yang mengatur semua logika CRUD. Di sinilah data festival dikelola, mulai dari menambah, menampilkan, mengubah, hingga menghapus, sehingga menjadi penghubung antara data dan menu utama.
+<img width="255" height="169" alt="image" src="https://github.com/user-attachments/assets/7cebb691-debe-4892-8d41-d7ef26daab06" />
 
-3. **package Main**
+1. **package Main**
 
    Package ini berisi class mainFestival yang menampilkan menu interaktif kepada pengguna. Melalui menu ini, pengguna bisa mengakses berbagai fitur CRUD dengan lebih mudah, lengkap dengan validasi agar input tetap aman.
 
+2. **package Model**
+
+   Di package ini terdapat class modelFestival yang menyimpan data dasar sebuah festival, seperti nama, asal daerah, dan tanggal pelaksanaannya. Package ini berfungsi sebagai tempat mendefinisikan struktur data yang akan dipakai program.
+   
+3. **package Service**
+
+   Package ini berisi class serviceFestival yang mengatur semua logika CRUD. Di sinilah data festival dikelola, mulai dari menambah, menampilkan, mengubah, hingga menghapus, sehingga menjadi penghubung antara data dan menu utama.
+
+
 ## Penjelasan Source Code Program
 ### 1. Package & Class modelFestival
-<img width="241" height="57" alt="image" src="https://github.com/user-attachments/assets/bfce2697-0a80-46dc-850d-f6e34dec9c30" />
+
+<img width="247" height="54" alt="image" src="https://github.com/user-attachments/assets/abac2305-7473-4f4c-8266-0e96581ec68c" />
 
 **a. Deklarasi package**
 
@@ -63,6 +70,57 @@ Program ini dibagi menjadi 3 package utama:
 
 
 ### 2. Package dan Class serviceFestival
+
+<img width="246" height="52" alt="image" src="https://github.com/user-attachments/assets/231d17ad-8eeb-4184-b02f-02b2cc12e25f" />
+
+**a. Deklarasi package dan import**
+
+<img width="335" height="115" alt="image" src="https://github.com/user-attachments/assets/20a0e607-4239-47b0-8f69-ba03f5e8cf6c" />
+
+- Gambar di atas menunjukkan bahwa class serviceFestival berada dalam package Service.
+- Import Model.modelFestival dipakai supaya kelas ini bisa menggunakan objek dari package Model, sedangkan java.util.ArrayList digunakan untuk menyimpan daftar festival dalam bentuk list dinamis yang bisa bertambah atau berkurang sesuai kebutuhan.
+
+**b. Deklarasi Class**
+
+<img width="843" height="54" alt="image" src="https://github.com/user-attachments/assets/f6cbecfa-6b93-433c-8c22-9095e17b7345" />
+
+- Dalam class seviceFestival terdapat atribut festivalList yang dimana variabel ini adalah sebuah ArrayList yang menyimpan kumpulan objek festival. Access modifier private dipakai agar list ini hanya bisa diakses dari dalam kelas, sementara untuk mengelola isinya tersedia berbagai metode CRUD.
+
+**c. Construktor**
+
+<img width="1323" height="167" alt="image" src="https://github.com/user-attachments/assets/e74ce21b-8937-486e-8b7f-c0571b94d6cd" />
+
+- Dalam construktor ini otomatis akan dijalankan ketika objek serviceFestival dibuat. Di dalamnya, daftar festival langsung diisi dengan beberapa data awal. Dengan begitu, saat program dijalankan pengguna bisa langsung melihat daftar beberapa festival yang ada tanpa harus menambahkannya terlebih dahulu.
+
+**d. CREATE**
+
+<img width="748" height="97" alt="image" src="https://github.com/user-attachments/assets/d787b463-237a-4794-98c4-a341cd1d945a" />
+
+- Pada metode create ini dipakai untuk menambahkan festival baru ke dalam list. Setelah festival masuk ke daftar, program akan mencetak pesan “Festival berhasil ditambahkan!” agar pengguna tahu bahwa prosesnya sukses.
+
+**e. READ**
+
+<img width="1436" height="318" alt="image" src="https://github.com/user-attachments/assets/e66caa69-5eef-437f-9e73-13c8614c9f34" />
+
+- Pada metode read ini menampilkan semua data festival dalam bentuk tabel. Jika list kosong, akan muncul pesan bahwa belum ada data. Kalau ada data, program mencetak header tabel lalu menampilkan setiap festival dengan nomor urut menggunakan perulangan. Format printf dipakai agar hasil keluaran lebih rapi.
+
+**f. UPDATE**
+
+<img width="831" height="211" alt="image" src="https://github.com/user-attachments/assets/dca49def-00f7-49e9-928e-f4a7502a7075" />
+
+- Pada metode update ini dipakai untuk mengganti data festival berdasarkan posisi indeks dalam list. Jika nomor indeks valid, data diganti dengan data baru yang diberikan. Jika tidak, program akan memberikan pesan peringatan “Nomor tidak valid!”.
+
+**g. DELETE**
+
+<img width="1169" height="208" alt="image" src="https://github.com/user-attachments/assets/62613fa4-f631-4cef-ae0e-386ed02de21b" />
+
+- Pada metode delete ini berfungsi untuk menghapus festival dari list berdasarkan nomor indeks. Kalau penghapusan berhasil maka nama festival yang dihapus akan ditampilkan di console. Jika nomor yang dimasukkan salah, program akan menampilkan pesan error.
+
+**h. Pengembalian Jumlah Data**
+
+<img width="443" height="75" alt="image" src="https://github.com/user-attachments/assets/b6c7a4ac-f0ab-4c9b-af70-4e127d7a7bbb" />
+
+- Kode diatas berfungsi untuk mengembalikan jumlah data festival yang ada di dalam list.
 
 
 
