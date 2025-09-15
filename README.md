@@ -192,6 +192,21 @@ Penerapan Model View Controller (MVC)
 - Perulangan akan terus berjalan selama pilihan bukan 5. Begitu pengguna memilih keluar, program berhenti dan Scanner akan ditutup.
 
 
+## Alur Program
+**Menu Utama**
+
+<img width="375" height="146" alt="image" src="https://github.com/user-attachments/assets/9d0b7ac5-b5c4-4355-82ad-398cf80f8d0d" />
+
+- Awalnya, program akan menampilkan menu yang akan dipilih oleh pengguna. Di dalam tampilan menu utama berupa daftar pilihan tambah festival, lihat daftar festival, ubah festival, hapus festival, atau keluar dari program. Pengguna diminta memasukkan angka sesuai pilihan menu, yang kemudian disimpan ke dalam variabel pilihan.
+
+**1. Tambah Festival**
+
+<img width="418" height="229" alt="image" src="https://github.com/user-attachments/assets/50d12389-f3bf-440a-aa35-d95ecfce7b9d" />
+
+- 
+
+
+
 
 
 
